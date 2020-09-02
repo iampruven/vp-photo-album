@@ -9,6 +9,7 @@ export default class Header extends React.Component {
           <Link to="/home">Home</Link>
           <Link to="/login">Login</Link>
           <Link to="/logout">Logout</Link>
+          <Link to="/register">Register</Link>
           <Link to="/image">Images</Link>
         </nav>
 

@@ -15,6 +15,7 @@ export default class Image extends React.Component {
                 <b>Jane Doe</b>
               </h4>
               <p>Architect & Engineer</p>
+              <p>Uploaded by: Dixie</p>
             </div>
           </div>
         </div>
@@ -28,6 +29,7 @@ export default class Image extends React.Component {
                 <b>Jane Doe</b>
               </h4>
               <p>Architect & Engineer</p>
+              <p>Uploaded by:Vendy</p>
             </div>
           </div>
         </div>
