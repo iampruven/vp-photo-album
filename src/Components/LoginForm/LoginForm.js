@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AuthApiService from "../../Services/auth-api-service";
 import UserContext from "../Context/UserContext";
-import TokenService from "../../Services/token-service";
+
 
 class LoginForm extends Component {
   static defaultProps = {
@@ -28,7 +28,11 @@ class LoginForm extends Component {
       .then((res) => {
         // username.value = "";
         // password.value = "";
+        console.log('hello')
+        console.log(res.authToken)        
+        console.log(this.context.processLogin)
         this.context.processLogin(res.authToken);
+
         this.props.onLoginSuccess();
       })
       .catch((res) => {

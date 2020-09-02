@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "../LandingPage/Landing";
 import RegistrationRoute from "../../Routes/RegistrationRoute/RegistrationRoute";
 import LoginRoute from "../../Routes/LoginRoute/LoginRoute";
+import DashboardRoute from "../../Routes/DashboardRoute/DashboardRoute";
 function App() {
   return (
     <main>
@@ -16,6 +17,7 @@ function App() {
             </header>
             <Switch>
               <Route exact path={'/'} component={Landing}/>
+              <Route exact path={"/dashboard"} component={DashboardRoute} />
               <Route exact path={"/image"} component={Image} />
               <Route exact path={'/login'} component={LoginRoute} />
               <Route exact path={'/register'} component={RegistrationRoute} />

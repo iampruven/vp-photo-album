@@ -6,6 +6,7 @@ export default class Landing extends React.Component{
         return(
             <div>
                 <h2 className="centering">Welcome!</h2>
+                <p>This is for sharing and keeping memories with your friends and family.</p>
             </div>
         )
     }
