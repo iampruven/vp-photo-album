@@ -3,23 +3,32 @@ import "./Image.css";
 import config from "../../config";
 import format from "date-fns/format";
 
+
 export default class Image extends React.Component {
   state = {
     posts: [],
   };
-  componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/api/images`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(res.statusText);
+  async componentDidMount() {
+    const res = await fetch(`${config.API_ENDPOINT}/api/images`);
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+    const data = await res.json();
+    const userInfo = data.map((image) =>
+    //eventually need to fix so that no need to have request for the same user's post
+      fetch(image.user).then(r => r.json())
+    );
+    // Promise<Reponse> -> map -> Promise<object>
+    const responses = await Promise.all(userInfo);
+
+    this.setState({ 
+      posts: data.map((x, i) => {
+        return {
+          ...x,
+          user: responses[i]
         }
-        return res.json();
       })
-      .then((data) => {
-        this.setState({ posts: data });
-        console.log(data);
-      })
-      .catch((err) => console.log(err.message));
+    });
   }
 
   render() {
@@ -35,7 +44,10 @@ export default class Image extends React.Component {
                 <b>Jane Doe</b>
               </h4>
               <p>{post.description}</p>
-              <p>Date Posted: {format(new Date(post.date_posted), "MMMM dd, yyyy")}</p>
+              <p>
+                Date Posted:{" "}
+                {format(new Date(post.date_posted), "MMMM dd, yyyy")}
+              </p>
             </div>
           </div>
         </div>

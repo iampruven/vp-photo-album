@@ -6,6 +6,7 @@ import Landing from "../LandingPage/Landing";
 import RegistrationRoute from "../../Routes/RegistrationRoute/RegistrationRoute";
 import LoginRoute from "../../Routes/LoginRoute/LoginRoute";
 import DashboardRoute from "../../Routes/DashboardRoute/DashboardRoute";
+import NewPost from "../NewPost/NewPost";
 function App() {
   return (
     <main>
@@ -21,6 +22,7 @@ function App() {
               <Route exact path={"/image"} component={Image} />
               <Route exact path={'/login'} component={LoginRoute} />
               <Route exact path={'/register'} component={RegistrationRoute} />
+              <Route exact path={'/newPost'} component={NewPost} />
             </Switch>
           </Router>
         </div>
