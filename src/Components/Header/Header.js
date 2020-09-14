@@ -41,11 +41,11 @@ export default class Header extends React.Component {
         <div className="centering">
           {TokenService.hasAuthToken() ? (
             <Link to={"/dashboard"}>
-              <h1>Friends Album</h1>
+              <h1>Photo Albums Dashboard</h1>
             </Link>
           ) : (
             <Link to={"/"}>
-              <h1>Friends Album</h1>
+              <h1>Photo Albums Dashboard</h1>
             </Link>
           )}
         </div>

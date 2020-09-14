@@ -67,7 +67,6 @@ export class UserProvider extends Component {
   };
 
   processLogin = (authToken) => {
-    console.log('helloooooooo')
     TokenService.saveAuthToken(authToken);
     const jwtPayload = TokenService.parseAuthToken();
     this.setUser({

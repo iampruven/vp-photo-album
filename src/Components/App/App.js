@@ -7,6 +7,8 @@ import RegistrationRoute from "../../Routes/RegistrationRoute/RegistrationRoute"
 import LoginRoute from "../../Routes/LoginRoute/LoginRoute";
 import DashboardRoute from "../../Routes/DashboardRoute/DashboardRoute";
 import NewPost from "../NewPost/NewPost";
+import NewAlbumRoute from "../../Routes/NewAlbumRoute/NewAlbumRoute";
+
 function App() {
   return (
     <main>
@@ -23,6 +25,7 @@ function App() {
               <Route exact path={'/login'} component={LoginRoute} />
               <Route exact path={'/register'} component={RegistrationRoute} />
               <Route exact path={'/newPost'} component={NewPost} />
+              <Route exact path={'/newalbum'} component={NewAlbumRoute} />
             </Switch>
           </Router>
         </div>
