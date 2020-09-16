@@ -8,7 +8,7 @@ export default class NewAlbumRoute extends React.Component{
     render(){
         return(
             <section>
-                <NewAlbumForm />
+                <NewAlbumForm  history={this.props.history} />
             </section>
         )
     }

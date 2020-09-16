@@ -41,7 +41,7 @@ export default class Image extends React.Component {
             </div>
             <div className="container">
               <h4>
-                <b>Jane Doe</b>
+      <b>{this.state.posts[0].user.username}</b>
               </h4>
               <p>{post.description}</p>
               <p>
@@ -53,6 +53,7 @@ export default class Image extends React.Component {
         </div>
       );
     });
+  
     return (
       <section className="rowing">
         <ul>{posting}</ul>
